@@ -3,7 +3,7 @@ import openai
 from collections import defaultdict
 import json
 
-openai.api_key = "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"
+openai.api_key = ""
 
 MODEL_NAME = "gpt-4-0613"
 # MODEL_NAME = "gpt-3.5-turbo"

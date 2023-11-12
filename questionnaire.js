@@ -6,24 +6,22 @@ const QUESTIONS = [
     "食後1時間ぐらいたつと、疲れや眠気を感じる",
     "食事を抜くとイライラする",
     "急に立つと、めまいがする",
-    //   "食生活は肉や魚をあまり食べず、野菜中心",
-    //   "ダイエットをしているのにやせない",
-    //   "同じことを何度も話していると指摘される",
-    //   "下半身の筋肉が衰えてきた",
-    //   "つまらないことでクヨクヨしてしまう",
-    //   "インスタント食品や冷凍食品をよく食べる",
-    //   "イラついたり落ち込んだり感情の起伏が激しい",
-    //   "首や背中の筋肉が痛む",
-    //   "よくまぶたがピクピク痙攣する",
-    //   "運動や睡眠中に足がつりやすい",
-    //   "スイーツや清涼飲料水をよくとる",
-    //   "下痢や便秘をしやすい",
-    //   "ニキビや湿疹ができやすい",
-    //   "おなかが張ってガスがたまりやすい",
-    //   "お酒、コーヒーや栄養ドリンクをよく飲む",
+      "食生活は肉や魚をあまり食べず、野菜中心",
+      "ダイエットをしているのにやせない",
+      "同じことを何度も話していると指摘される",
+      "下半身の筋肉が衰えてきた",
+      "つまらないことでクヨクヨしてしまう",
+      "インスタント食品や冷凍食品をよく食べる",
+      "イラついたり落ち込んだり感情の起伏が激しい",
+      "首や背中の筋肉が痛む",
+      "よくまぶたがピクピク痙攣する",
+      "運動や睡眠中に足がつりやすい",
+      "スイーツや清涼飲料水をよくとる",
+      "下痢や便秘をしやすい",
+      "ニキビや湿疹ができやすい",
+      "おなかが張ってガスがたまりやすい",
+      "お酒、コーヒーや栄養ドリンクをよく飲む",
 ];
-
-// const questions = QUESTIONS.map((question, index) => ({ question, choices: SELECT_ANSWER, id: index + 1 }));
 
 // ローディングメッセージ点滅用のタイマーID
 let loadingInterval;
@@ -135,7 +133,8 @@ async function submitForm() {
         const resultDivRecommendFoodDiv = document.getElementById('resultRecommendFood');
         const buttonToBuyDiv = document.getElementById('buttonToBuy');
         const buttonToStartDiv = document.getElementById('buttonToStart');
-        resultRecommendNabeDiv.innerHTML = `<div id="resultRecommendNabe">あなたへのおすすめの鍋<div id="resultRecommendNabeName">${result1}</p></div>`;
+        resultRecommendNabeDiv.innerHTML = `<div id="resultRecommendNabe">あなたへのおすすめの鍋<div id="resultRecommendNabeName">${result1}</div>\ 
+                                            <div id="resultRecommendNabeNameImg"><img src="img/${result1}.jpg" alt="${result1}"></div></div> `;
         resultDivRecommendFoodDiv.innerHTML = `<div id="resultDivRecommendFood">あなたへのおすすめ食材<ul id="resultDivRecommendFoodName">${result2.map(item => `<li>${item}</li>`).join('')}</ul></div>`;
         // 遷移先決める
         buttonToBuyDiv.innerHTML = `<button id="buttonToBuyBox" type="button" onclick="">購入する</button>`
